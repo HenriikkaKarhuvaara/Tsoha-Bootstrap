@@ -15,7 +15,7 @@ lisays DATE
 
 CREATE TABLE Askare(
   id SERIAL PRIMARY KEY, -- SERIAL tyyppinen pääavain pitää huolen, että tauluun lisätyllä rivillä on aina uniikki pääavain. Kätevää!
-  askare_id INTEGER REFERENCES Kategoria(id),
+  kategoria_id INTEGER REFERENCES Kategoria(id),
   kayttaja_id INTEGER REFERENCES Kayttaja(id),
   nimi varchar(50) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
   status boolean DEFAULT FALSE,
