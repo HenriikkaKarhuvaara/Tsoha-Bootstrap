@@ -1,0 +1,22 @@
+
+
+        {% extends "base.html" %}
+        {% block content %}
+        <h1>Tee tsohaa</h1>
+        <!-- Painikkeet tähän -->
+        <p>
+            <button class="btn btn-danger">Poista</button> <a href="#" class="btn btn-default">Muokkaa</a>
+        </p>
+        <!-- Tiedot tulee listana tähän -->
+        <ul>
+            <li><strong>Lisäyspäivä:</strong> 22.3.2017</li>
+            <li><strong>Deadline:</strong> 23.3.2017</li>
+            <li><strong>Status:</strong> <label class="label label-danger">kesken</label></li>
+        </ul>
+        <!-- Kuvaus tulee tähän -->
+        <p>
+            Tulisi täyttää kakkosdediksen vaatimukset torstaihin keskiyöhön mennessä!
+        </p>
+        {% endblock %}
+
+ 
