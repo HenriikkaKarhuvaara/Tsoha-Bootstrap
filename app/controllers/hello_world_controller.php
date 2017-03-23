@@ -29,5 +29,18 @@
         View::make('suunnitelmat/task_change.html');
     }
     
+     public static function kategories_list() {
+        View::make('suunnitelmat/kategories_list.html');
+    }
+    
+     public static function kategories_show() {
+        View::make('suunnitelmat/kategories_show.html');
+    }
+    
+     public static function kategories_change() {
+        View::make('suunnitelmat/kategories_change.html');
+    }
+    
+    
     
   }

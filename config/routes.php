@@ -23,3 +23,15 @@ $routes->get('/task/2', function() {
 $routes->get('/login', function() {
     HelloWorldController::login();
 });
+
+$routes->get('/kategories', function() {
+    HelloWorldController::kategories_list();
+});
+
+$routes->get('/kategories/1', function() {
+    HelloWorldController::kategories_show();
+});
+
+$routes->get('/kategories/2', function() {
+    HelloWorldController::kategories_change();
+});
