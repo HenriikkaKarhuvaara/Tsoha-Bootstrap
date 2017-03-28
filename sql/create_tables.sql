@@ -18,7 +18,7 @@ CREATE TABLE Askare(
   kategoria_id INTEGER REFERENCES Kategoria(id),
   kayttaja_id INTEGER REFERENCES Kayttaja(id),
   nimi varchar(50) NOT NULL, -- Muista erottaa sarakkeiden määrittelyt pilkulla!
-  status boolean DEFAULT FALSE,
+  --status boolean DEFAULT FALSE,
   kuvaus varchar(400),
   lisays DATE,
   deadline DATE
