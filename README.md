@@ -3,7 +3,7 @@
 Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](http://karhuhen.users.cs.helsinki.fi/tsoha/)
-* [Linkki dokumentaatiooni](https://www.github.com)
+* [Linkki dokumentaatiooni](https://github.com/HenriikkaKarhuvaara/Tsoha-Bootstrap/blob/master/doc/Muistilistadoku-4.pdf)
 
 ## Työn aihe
 
@@ -11,11 +11,11 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 
 ### Linkit staattisiin html-sivuihin
 
-* linkki kirjautumissivulle: http://karhuhen.users.cs.helsinki.fi/tsoha/login
-* linkki askarelistaan: http://karhuhen.users.cs.helsinki.fi/tsoha/task
-* linkki askareen esittelysivulle: http://karhuhen.users.cs.helsinki.fi/tsoha/task/1
-* linkki askareen muokkaussivulle: http://karhuhen.users.cs.helsinki.fi/tsoha/task/2
-* linkki kategorialistaan: http://karhuhen.users.cs.helsinki.fi/tsoha/kategories
-* linkki kategorian esittelysivulle: http://karhuhen.users.cs.helsinki.fi/tsoha/kategories/1
-* linkki kategorian muokkaussivulle: http://karhuhen.users.cs.helsinki.fi/tsoha/kategories/2
-* linkki tietokantatauluhin: http://karhuhen.users.cs.helsinki.fi/tsoha/tietokantayhteys
+* [Linkki kirjautumissivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/login)
+* [Linkki askarelistaan](http://karhuhen.users.cs.helsinki.fi/tsoha/task)
+* [Linkki askareen esittelysivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/task/1)
+* [Linkki askareen muokkaussivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/task/2)
+* [Linkki kategorialistaan](http://karhuhen.users.cs.helsinki.fi/tsoha/kategories)
+* [Linkki kategorian esittelysivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/kategories/1)
+* [Linkki kategorian muokkaussivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/kategories/2)
+* [Linkki tietokantatauluhin](http://karhuhen.users.cs.helsinki.fi/tsoha/tietokantayhteys)
