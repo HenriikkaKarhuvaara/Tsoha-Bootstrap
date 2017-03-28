@@ -8,14 +8,37 @@ $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
 });
 
-$routes->get('/task', function() {
-    HelloWorldController::task_list();
+
+
+//$routes->get('/taask/:id', function($id) {
+//    TaskController::show($id);
+//});
+//
+//$routes->get('/taask/edit', function() {
+//    TaskController::index();
+//});
+
+$routes->post('/task', function(){
+  TaskController::store();
 });
+// Pelin lisäyslomakkeen näyttäminen
+$routes->get('/task/new', function(){
+  TaskController::create();
+});
+
+
+//lista
+$routes->get('/task', function() {
+   TaskController::index();
+});
+
+//tehdään 1= id
 $routes->get('/task/1', function() {
     HelloWorldController::task_show();
 });
 
-$routes->get('/task/2', function() {
+//2=edit
+$routes->get('/task/edit', function() {
     HelloWorldController::task_change();
 });
 
@@ -35,3 +58,5 @@ $routes->get('/kategories/1', function() {
 $routes->get('/kategories/2', function() {
     HelloWorldController::kategories_change();
 });
+
+
