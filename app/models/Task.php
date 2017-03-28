@@ -6,12 +6,11 @@ class Task extends BaseModel {
     
     public function __construct($attributes) {
         parent::__construct($attributes);
-        
-        $imuroi = new Task(array('id' => 1, 'nimi' => 'imuroi'));
+       
     }
     
     public static function all() {
-        $query = DB::connection()->prepare('SELECT * FROM Task');
+        $query = DB::connection()->prepare('SELECT * FROM Askare');
         $query ->execute();
         $rows = $query->fetchAll();
         $tasks = array();
