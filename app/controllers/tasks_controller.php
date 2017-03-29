@@ -14,10 +14,10 @@ class TaskController extends BaseController {
     }
 
     //ei toimi!
-//    public static function show($id) {
-//        $task = Task::find($id);
-//        View::make('task/show.html', array('task' => $task));
-//    }
+    public static function show($id) {
+        $task = Task::find($id);
+        View::make('task/show.html', array('task' => $task));
+    }
 
     public static function store() {
         $params = $_POST;
@@ -28,10 +28,21 @@ class TaskController extends BaseController {
         'deadline' => $params['deadline'],
         'kuvaus' => $params['kuvaus']
       ));
-        
+
         $task->save();
         
         Redirect::to('/task/' . $task->id, array('message' => 'Askare on lisätty listaasi!'));
+    }
+    
+    public static function create() {
+        //Näytetään askareen lisäyslomake
+ 
+        View::make('task/new.html');
+    }
+    
+    public static function edit($id) {
+        $task = Task::find($id);
+        View::make('task/edit.html',array('task' => $task));
     }
 
 }

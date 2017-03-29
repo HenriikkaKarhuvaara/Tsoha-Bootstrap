@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Tee tsohaa</h1>
+<h1>{{task.nimi}}</h1>
 
 <p>
     <button class="btn btn-danger">Poista</button> <a class="btn btn-default btn-sm" href="{{base_path}}/task/{{task.id}}/edit">Muokkaa</a>
 </p>
-
+ 
 <ul>
     <li><strong>Lisäyspäivä:</strong>{{task.lisays}}</li>
             <li><strong>Deadline:</strong>{{task.deadline}}</li>
