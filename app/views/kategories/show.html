@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>{{kategory.nimi}}</h1>
+
+<form method="post" action="{{base_path}}/kategories/{{kateogory.id}}/destroy" style="display: inline-block;">
+  <button type="submit" class="btn btn-danger">Poista</button>
+</form>
+
+<p>
+    <a class="btn btn-default btn-sm" href="{{base_path}}/kategories/{{kategory.id}}/edit">Muokkaa</a>
+</p>
+ 
+<ul>
+    <li><strong>Lisäyspäivä:</strong>{{kategory.lisays}}</li>
+</ul>
+
+<p>
+    {{kategory.kuvaus}}
+</p>
+
+    
+{% endblock %}

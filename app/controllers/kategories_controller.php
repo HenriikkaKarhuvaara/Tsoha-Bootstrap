@@ -23,7 +23,7 @@ class KategoryController extends BaseController {
 
         $kategory->save();
         
-        Redirect::to('/kategory/' . $task->id, array('message' => 'Kategoria on lisätty listaasi!'));
+        Redirect::to('/kategories/' . $task->id, array('message' => 'Kategoria on lisätty listaasi!'));
     }
     
     public static function create() {
@@ -54,14 +54,14 @@ class KategoryController extends BaseController {
             View::make('kategories/edit.html', array('errors'=>$errors,'attributes' => $attributes));
         } else {
             $kategory->update();
-            Redirect::to('/kategory/'. $kategory->id,array('message' =>'Kategoriaa on muokattu onnistuneest'));
+            Redirect::to('/kategories/'. $kategory->id,array('message' =>'Kategoriaa on muokattu onnistuneest'));
         }
     }
     
     public static function destroy($id){
     $kategory = new Kategory(array('id' => $id));
     $kategory->destroy();
-    Redirect::to('/kategory/'. array('message' => 'Kategoria on poistettu onnistuneesti!'));
+    Redirect::to('/kategories/'. array('message' => 'Kategoria on poistettu onnistuneesti!'));
   }
 
 }
