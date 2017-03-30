@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Käyttäjän Henriikka kateogrialista</h1>
+
+<p>
+    <a href="{{base_path}}/kategory/new" class="btn btn-success">Lisää kategoria</a>
+</p>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Nimi</th>
+            <th>Lisäyspäivä</th>
+            <th>Kuvaus</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <!-- Listataan askareet tähän -->
+        {% for kategory in kategories %}
+        <tr>
+            <!--ohjaa polkuun task/ id(=1) eli esittelysivulle-->
+            <td><a href="{{base_path}}/kategory/{{kategory.id}}">{{kategory.nimi}}</td>
+            <!-- <td><label class="label label-danger">kesken</label></td>-->
+            
+            <td>{{kategory.lisays}}</td>
+            <td>{{kategory.kuvaus}}</td>
+            <td><a class="btn btn-default btn-sm" href="{{base_path}}/kategory/{{kategory.id}}/edit">Muokkaa</a></td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% endblock %}
+
+
+

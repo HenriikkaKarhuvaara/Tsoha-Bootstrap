@@ -19,7 +19,19 @@ $routes->get('/task/new', function(){
 });
 
 
-//lista
+$routes->get('/task/:id/edit', function($id) {
+    TaskController::edit($id);
+});
+
+$routes->post('/task/:id/edit', function($id) {
+    TaskController::update($id);
+});
+
+$routes->post('/task/:id/destroy', function($id) {
+    TaskController::destroy($id);
+});
+
+
 $routes->get('/task', function() {
    TaskController::index();
 });
@@ -29,22 +41,13 @@ $routes->get('/task/:id', function($id) {
     TaskController::show($id);
 });
 
-//2=edit
-$routes->get('/task/:id/edit', function($id) {
-    TaskController::edit($id);
-});
-
-
-$routes->get('/login', function() {
-    HelloWorldController::login();
-});
 
 $routes->get('/kategories', function() {
-    HelloWorldController::kategories_list();
+    KategoryController::index();
 });
 
-$routes->get('/kategories/1', function() {
-    HelloWorldController::kategories_show();
+$routes->get('/kategories/:id', function($id) {
+    KategoryController::show($id);
 });
 
 $routes->get('/kategories/2', function() {
@@ -52,3 +55,6 @@ $routes->get('/kategories/2', function() {
 });
 
 
+$routes->get('/login', function() {
+    HelloWorldController::login();
+});
