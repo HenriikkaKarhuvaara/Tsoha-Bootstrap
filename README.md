@@ -9,7 +9,7 @@ Yleisiä linkkejä:
 
 Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkittenry.github.io/suunnittelu_ja_tyoymparisto/aiheet/Muistilista.html) 
 
-### Linkit staattisiin html-sivuihin
+### Muut linkit
 
 * [Linkki kirjautumissivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/login)
 
