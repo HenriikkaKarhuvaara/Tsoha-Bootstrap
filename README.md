@@ -13,7 +13,7 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 
 * [Linkki kirjautumissivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/login)
 
-* [Linkki askarelistaan](http://karhuhen.users.cs.helsinki.fi/tsoha/task)
+* [Linkki askarelistaan](http://karhuhen.users.cs.helsinki.fi/tsoha/task) (Täyttää kolmosviikon vaatimukset.)
 * [Linkki kategorialistaan](http://karhuhen.users.cs.helsinki.fi/tsoha/kategories)
 
 
