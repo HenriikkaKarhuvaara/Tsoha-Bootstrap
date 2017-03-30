@@ -12,10 +12,9 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 ### Linkit staattisiin html-sivuihin
 
 * [Linkki kirjautumissivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/login)
+
 * [Linkki askarelistaan](http://karhuhen.users.cs.helsinki.fi/tsoha/task)
-* [Linkki askareen esittelysivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/task/1)
-* [Linkki askareen muokkaussivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/task/2)
 * [Linkki kategorialistaan](http://karhuhen.users.cs.helsinki.fi/tsoha/kategories)
-* [Linkki kategorian esittelysivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/kategories/1)
-* [Linkki kategorian muokkaussivulle](http://karhuhen.users.cs.helsinki.fi/tsoha/kategories/2)
+
+
 * [Linkki tietokantatauluhin](http://karhuhen.users.cs.helsinki.fi/tsoha/tietokantayhteys)
