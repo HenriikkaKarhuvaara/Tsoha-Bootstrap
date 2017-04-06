@@ -39,16 +39,9 @@ $routes->get('/task/:id/destroy', function($id) {
 });
 
 
-
-
-
-
-
-
 $routes->get('/task', function() {
    TaskController::index();
 });
-
 
 $routes->get('/task/:id', function($id) {
     TaskController::show($id);
@@ -63,11 +56,21 @@ $routes->get('/kategories/:id', function($id) {
     KategoryController::show($id);
 });
 
-$routes->get('/kategories/2', function() {
-    HelloWorldController::kategories_change();
+$routes->post('/kategories', function(){
+  KategoryController::store();
+});
+// Pelin lisäyslomakkeen näyttäminen
+$routes->get('/kategories/new', function(){
+  KategoryController::create();
 });
 
 
+
+
 $routes->get('/login', function() {
-    HelloWorldController::login();
+    UserController::login();
+});
+
+$routes->post('/login', function(){
+  UserController::handle_login();
 });
