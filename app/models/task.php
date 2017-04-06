@@ -60,6 +60,7 @@ class Task extends BaseModel {
     
 
     public static function all() {
+        
         $query = DB::connection()->prepare('SELECT * FROM Askare');
         $query->execute();
         $rows = $query->fetchAll();
@@ -79,6 +80,9 @@ class Task extends BaseModel {
 
         return $tasks;
     }
+       
+
+   
 
     public static function find($id) {
         $query = DB::connection()->prepare('SELECT * FROM Askare WHERE id = :id LIMIT 1');
@@ -112,8 +116,8 @@ class Task extends BaseModel {
 
     public function update() {
 
-        $query = DB::connection()->prepare('UPDATE Askare (nimi, lisays, deadline, kuvaus) VALUES (:nimi, :lisays, :deadline, :kuvaus) RETURNING id');
-        $query->execute(array('nimi' => $this->nimi, 'lisays' => $this->lisays, 'deadline' => $this->deadline, 'kuvaus' => $this->kuvaus));
+        $query = DB::connection()->prepare('UPDATE Askare SET nimi = :nimi, lisays = :lisays, deadline = :deadline, kuvaus = :kuvaus WHERE id = :id');
+        $query->execute(array('id' => $this->id,'nimi' => $this->nimi, 'lisays' => $this->lisays, 'deadline' => $this->deadline, 'kuvaus' => $this->kuvaus));
         $row = $query->fetch();
         $this->id = $row['id'];
     }
@@ -121,8 +125,8 @@ class Task extends BaseModel {
     public function destroy() {
 
         $query = DB::connection()->prepare('DELETE FROM Askare WHERE id = :id');
+        $query->execute(array('id' => $this->id));
         $row = $query->fetch();
-        $this->id = $row['id'];
     }
 
 }
