@@ -18,3 +18,5 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 
 
 * [Linkki tietokantatauluhin](http://karhuhen.users.cs.helsinki.fi/tsoha/tietokantayhteys)
+
+#### Testikäyttäjätunnus ja -salasana: testi, testi.
