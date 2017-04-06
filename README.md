@@ -11,4 +11,4 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 
 ### Testikäyttäjätunnus ja -salasana: testi, testi.
 
-#### Huom! Askareen muokkaustoimintoa ja kirjautuneen käyttäjän askareiden listausta en vielä saanut onnistuneesti toteutettua.
+#### Huom! Muokkaustoimintoa ja kirjautuneen käyttäjän askareiden listausta en vielä saanut onnistuneesti toteutettua.
