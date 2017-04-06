@@ -19,17 +19,30 @@ $routes->get('/task/new', function(){
 });
 
 
-$routes->get('/task/:id/edit', function($id) {
-    TaskController::edit($id);
-});
 
 $routes->post('/task/:id/edit', function($id) {
     TaskController::update($id);
 });
 
+$routes->get('/task/:id/edit', function($id) {
+    TaskController::edit($id);
+});
+
+
+
 $routes->post('/task/:id/destroy', function($id) {
     TaskController::destroy($id);
 });
+
+$routes->get('/task/:id/destroy', function($id) {
+    TaskController::edit($id);
+});
+
+
+
+
+
+
 
 
 $routes->get('/task', function() {

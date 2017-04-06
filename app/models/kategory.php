@@ -6,6 +6,45 @@ class Kategory extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
+        $this->validators = array('validate_nimi','validate_kuvaus', 'validate_lisays');
+    }
+    
+    
+    public function validate_nimi() {
+        $errors = array();
+
+        if ($this->nimi == '' || $this->nimi == null) {
+            $errors[] = 'Muistithan syöttää askareellesi nimen!';
+        }
+        if (strlen($this->nimi) < 3) {
+            $errors[] = 'Nimen minimipituus on  kolme merkkiä!';
+        }
+
+        return $errors;
+    }
+    
+    public function validate_kuvaus() {
+        $errors = array();
+        if ($this->kuvaus == '' || $this->kuvaus == null) {
+            $errors[] = 'Muistithan syöttää askareellesi kuvauksen!';
+        }
+        if (strlen($this->kuvaus) < 3) {
+            $errors[] = 'Kuvauksen minimipituus on kolme merkkiä!';
+        }
+
+        return $errors;
+    }
+    
+    public function validate_lisays() {
+        $errors = array();
+        if ($this->lisays == '' || $this->lisays == null) {
+            $errors[] = 'Muistithan syöttää askareellesi lisäyspäivämäärän!';
+        }
+        if (!preg_match("/^[0-9]{1,2}\\.[0-9]{1,2}\\.[0-9]{4}$/", $this->lisays)) {
+            $errors[] = 'Päivämäärän tulee olla muodossa dd.mm.yyyy!';
+        }
+
+        return $errors;
     }
 
     public static function all() {

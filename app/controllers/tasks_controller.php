@@ -21,33 +21,39 @@ class TaskController extends BaseController {
 
     public static function store() {
         $params = $_POST;
+        $attributes = array(
+            'nimi' => $params['nimi'],
+            'kuvaus' => $params['kuvaus'],
+            'lisays' => $params['lisays'],
+            'deadline' => $params['deadline']
+        );
 
-        $task = new Task(array(
-        'nimi' => $params['nimi'],
-        'lisays' => $params['lisays'],
-        'deadline' => $params['deadline'],
-        'kuvaus' => $params['kuvaus']
-      ));
+        $task = new Task($attributes);
+        $errors = $task->errors();
 
-        $task->save();
-        
-        Redirect::to('/task/' . $task->id, array('message' => 'Askare on lisätty listaasi!'));
+        if (count($errors) == 0) {
+            $task->save();
+
+            Redirect::to('/task/' . $task->id, array('message' => 'Askare on lisätty muistilistaasi!'));
+        } else {
+            View::make('task/new.html', array('errors' => $errors, 'attributes' => $attributes));
+        }
     }
-    
+
     public static function create() {
         //Näytetään askareen lisäyslomake
- 
+
         View::make('task/new.html');
     }
-    
+
     public static function edit($id) {
         $task = Task::find($id);
         View::make('task/edit.html', array('attributes' => $task));
     }
-    
+
     public static function update($id) {
         $params = $_POST;
-        
+
         $attributes = array(
             'id' => $id,
             'nimi' => $params['nimi'],
@@ -55,22 +61,22 @@ class TaskController extends BaseController {
             'deadline' => $params['deadline'],
             'kuvaus' => $params['kuvaus']
         );
-        
+
         $task = new Task($attributes);
         $errors = $task->errors();
-        
-        if(count($errors) > 0) {
-            View::make('task/edit.html', array('errors'=>$errors,'attributes' => $attributes));
+
+        if (count($errors) > 0) {
+            View::make('task/edit.html', array('errors' => $errors, 'attributes' => $attributes));
         } else {
             $task->update();
-            Redirect::to('/task/'. $task->id,array('message' =>'Askaretta on muokattu onnistuneest'));
+            Redirect::to('/task/' . $task->id, array('message' => 'Askaretta on muokattu onnistuneesti'));
         }
     }
-    
-    public static function destroy($id){
-    $task = new Task(array('id' => $id));
-    $task->destroy();
-    Redirect::to('/task/'. array('message' => 'Askare on poistettu onnistuneesti!'));
-  }
+
+    public static function destroy($id) {
+        $task = new Task(array('id' => $id));
+        $task->destroy();
+        Redirect::to('/task', array('message' => 'Askare on poistettu onnistuneesti!'));
+    }
 
 }
