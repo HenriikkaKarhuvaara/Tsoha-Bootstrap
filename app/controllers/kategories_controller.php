@@ -23,7 +23,7 @@ class KategoryController extends BaseController {
 
         $kategory->save();
         
-        Redirect::to('/kategories/' . $task->id, array('message' => 'Kategoria on lisätty listaasi!'));
+        Redirect::to('/kategories/' . $kategory->id, array('message' => 'Kategoria on lisätty listaasi!'));
     }
     
     public static function create() {

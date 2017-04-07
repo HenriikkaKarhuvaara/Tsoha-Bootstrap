@@ -86,10 +86,26 @@ class Kategory extends BaseModel {
 
     public function save() {
 
-        $query = DB::connection()->prepare('INSERT INTO Kategory (nimi, lisays, kuvaus) VALUES (:nimi, :lisays, :kuvaus) RETURNING id');
+        $query = DB::connection()->prepare('INSERT INTO Kategoria (nimi, lisays, kuvaus) VALUES (:nimi, :lisays, :kuvaus) RETURNING id');
         $query->execute(array('nimi' => $this->nimi, 'lisays' => $this->lisays, 'kuvaus' => $this->kuvaus));
         $row = $query->fetch();
         $this->id = $row['id'];
+    }
+    
+    
+    public function update() {
+
+        $query = DB::connection()->prepare('UPDATE Kategoria SET nimi = :nimi, lisays = :lisays, deadline = :deadline, kuvaus = :kuvaus WHERE id = :id');
+        $query->execute(array('id' => $this->id,'nimi' => $this->nimi, 'lisays' => $this->lisays, 'deadline' => $this->deadline, 'kuvaus' => $this->kuvaus));
+        $row = $query->fetch();
+        $this->id = $row['id'];
+    }
+
+    public function destroy() {
+
+        $query = DB::connection()->prepare('DELETE FROM Kategoria WHERE id = :id');
+        $query->execute(array('id' => $this->id));
+        $row = $query->fetch();
     }
 
 }

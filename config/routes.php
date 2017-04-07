@@ -48,6 +48,36 @@ $routes->get('/task/:id', function($id) {
 });
 
 
+$routes->post('/kategories', function(){
+  KategoryController::store();
+});
+// Pelin lisäyslomakkeen näyttäminen
+$routes->get('/kategories/new', function(){
+  KategoryController::create();
+});
+
+
+$routes->post('/kategories/:id/edit', function($id) {
+    KategoryController::update($id);
+});
+
+$routes->get('/kategories/:id/edit', function($id) {
+    KategoryController::edit($id);
+});
+
+
+
+$routes->post('/kategories/:id/destroy', function($id) {
+    KategoryController::destroy($id);
+});
+
+$routes->get('/kategories/:id/destroy', function($id) {
+    KategoryController::edit($id);
+});
+
+
+
+
 $routes->get('/kategories', function() {
     KategoryController::index();
 });
@@ -56,13 +86,6 @@ $routes->get('/kategories/:id', function($id) {
     KategoryController::show($id);
 });
 
-$routes->post('/kategories', function(){
-  KategoryController::store();
-});
-// Pelin lisäyslomakkeen näyttäminen
-$routes->get('/kategories/new', function(){
-  KategoryController::create();
-});
 
 
 
@@ -73,4 +96,8 @@ $routes->get('/login', function() {
 
 $routes->post('/login', function(){
   UserController::handle_login();
+});
+
+$routes->post('/logout', function(){
+  UserController::logout();
 });
