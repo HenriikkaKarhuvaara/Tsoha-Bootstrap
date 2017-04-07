@@ -16,3 +16,4 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 * muokkaustoiminto
 * poista kategoria
 * vain kirjautuneen käyttäjän kategorioiden / askareiden listaus
+* kategorian ja askareiden järkevä suhde
