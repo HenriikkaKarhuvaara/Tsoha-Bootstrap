@@ -9,7 +9,8 @@
 class TaskController extends BaseController {
 
     public static function index() {
-        
+        self::check_logged_in();
+
         $user_logged_in = self::get_user_logged_in();
         $tasks = Task::all($user_logged_in->id);
         View::make('task/index.html', array('tasks' => $tasks));
@@ -17,6 +18,8 @@ class TaskController extends BaseController {
 
     //ei toimi!
     public static function show($id) {
+        self::check_logged_in();
+
         $task = Task::find($id);
         View::make('task/show.html', array('task' => $task));
     }
@@ -49,6 +52,8 @@ class TaskController extends BaseController {
     }
 
     public static function edit($id) {
+        self::check_logged_in();
+
         $task = Task::find($id);
         View::make('task/edit.html', array('attributes' => $task));
     }
