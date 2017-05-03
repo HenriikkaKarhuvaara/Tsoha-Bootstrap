@@ -14,6 +14,4 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 #### Huom! Vielä ei toimi
 
 * muokkaustoiminto
-* poista kategoria
-* vain kirjautuneen käyttäjän kategorioiden / askareiden listaus
-* kategorian ja askareiden järkevä suhde
+* askareen kategorioiden löytyminen / kategorian askareiden löytyminen
