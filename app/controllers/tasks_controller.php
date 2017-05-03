@@ -72,6 +72,7 @@ class TaskController extends BaseController {
     }
 
     public static function update($id) {
+        self::check_logged_in();
         $params = $_POST;
 
         $attributes = array(
@@ -80,7 +81,7 @@ class TaskController extends BaseController {
             'lisays' => $params['lisays'],
             'deadline' => $params['deadline'],
             'kuvaus' => $params['kuvaus'],
-            'kayttaja_id' => $params['kayttaja_id'],
+            'kayttaja_id' => $params['kayttaja_id']
 
         );
 

@@ -139,7 +139,7 @@ class Task extends BaseModel {
     public function update() {
 
         $query = DB::connection()->prepare('UPDATE Askare SET nimi = :nimi, lisays = :lisays, deadline = :deadline, kuvaus = :kuvaus, kayttaja_id = :kayttaja_id WHERE id = :id');
-        $query->execute(array('nimi' => $this->nimi, 'lisays' => $this->lisays, 'deadline' => $this->deadline, 'kuvaus' => $this->kuvaus, 'kayttaja_id' => $this->kayttaja_id));
+        $query->execute(array('nimi' => $this->nimi, 'lisays' => $this->lisays, 'deadline' => $this->deadline, 'kuvaus' => $this->kuvaus, 'kayttaja_id' => $this->kayttaja_id,'id' => $this->id));
         $row = $query->fetch();
     }
 
