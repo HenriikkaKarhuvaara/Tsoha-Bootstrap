@@ -13,5 +13,4 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 
 #### Huom! Vielä ei toimi
 
-* muokkaustoiminto
 * askareen kategorioiden löytyminen / kategorian askareiden löytyminen
