@@ -42,7 +42,7 @@
 
     <div class="form-group">
         <label>Kategoriat</label>
-        <select class="form-control" name="kategoriat[]" multiple="">
+        <select class="form-control" name= "kategoriat" multiple="">
         {% for kategory in kategories %}
             <option value="{{kategory.id}}">{{kategory.nimi}}</option>
             {% endfor %}

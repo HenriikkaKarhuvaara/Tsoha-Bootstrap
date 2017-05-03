@@ -21,6 +21,7 @@
     <tbody>
         <!-- Listataan askareet tähän -->
         {% for task in tasks %}
+        
         <tr>
             <!--ohjaa polkuun task/ id(=1) eli esittelysivulle-->
             <td><a href="{{base_path}}/task/{{task.id}}">{{task.nimi}}</td>
@@ -29,10 +30,12 @@
             <td>{{task.lisays}}</td>
             <td>{{task.deadline}}</td>
             <td>{{task.kuvaus}}</td>
-            <td> {% for category in task.kategoriat %}
-                {% for cate in category %}
+            
+            
+            <td> {% for kategory in task.kategoriat %}
+                {% for kate in kategory %}
 
-                <text>{{cate}},  </text>
+                <text>{{kate}},  </text>
                 {% endfor %}
                 {% endfor %}
             </td>

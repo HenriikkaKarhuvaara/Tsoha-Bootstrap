@@ -108,8 +108,7 @@ class Task extends BaseModel {
         $tasks = array();
 
         foreach ($rows as $row) {
-            $query = DB::connection()->prepare('SELECT Kategoria.nimi FROM Askare, AskareenKategoria, Kategoria'
-                    . ' WHERE askare.id=:askare_id AND Askare.id=AskareenKategoria.askare_id AND AskareenKategoria.kategoria_id=Kategoria.id');
+            $query = DB::connection()->prepare('SELECT Kategoria.nimi AS kategory FROM Askare, AskareenKategoria, Kategoria WHERE askare.id=:askare_id AND Askare.id=AskareenKategoria.askare_id AND AskareenKategoria.kategoria_id=Kategoria.id');
             $query->execute(array('askare_id' => $row['id']));
             $categories = array();
             $categories = $query->fetchAll();
