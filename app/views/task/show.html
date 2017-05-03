@@ -13,7 +13,21 @@
 <ul>
     <li><strong>Lisäyspäivä:</strong>{{task.lisays}}</li>
             <li><strong>Deadline:</strong>{{task.deadline}}</li>
+            
 </ul>
+
+<div>
+    
+    <h3>Kategoriat: 
+    {% for category in categories %}
+    {% for cate in category %}
+    
+    {{cate}}
+    
+    {% endfor %}
+    {% endfor %}
+    </h3>
+</div>
 
 <p>
     {{task.kuvaus}}
@@ -21,5 +35,7 @@
 
     
 {% endblock %}
+
+
 
 

@@ -14,6 +14,7 @@
             <th>Lisäyspäivä</th>
             <th>Deadline</th>
             <th>Kuvaus</th>
+            <th>Kategoriat<th/>
         </tr>
     </thead>
 
@@ -24,11 +25,19 @@
             <!--ohjaa polkuun task/ id(=1) eli esittelysivulle-->
             <td><a href="{{base_path}}/task/{{task.id}}">{{task.nimi}}</td>
             <!-- <td><label class="label label-danger">kesken</label></td>-->
-            
+
             <td>{{task.lisays}}</td>
             <td>{{task.deadline}}</td>
             <td>{{task.kuvaus}}</td>
+            <td> {% for category in task.kategoriat %}
+                {% for cate in category %}
+
+                <text>{{cate}},  </text>
+                {% endfor %}
+                {% endfor %}
+            </td>
             <td><a class="btn btn-default btn-sm" href="{{base_path}}/task/{{task.id}}/edit">Muokkaa</a></td>
+
         </tr>
         {% endfor %}
 

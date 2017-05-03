@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Käyttäjän Henriikka kateogrialista</h1>
+<h1>Käyttäjän Henriikka kategorialista</h1>
 
 <p>
     <a href="{{base_path}}/kategories/new" class="btn btn-success">Lisää kategoria</a>
@@ -23,8 +23,9 @@
             <td><a href="{{base_path}}/kategories/{{kategory.id}}">{{kategory.nimi}}</td>
             <!-- <td><label class="label label-danger">kesken</label></td>-->
             
-            <td>{{kategory.lisays}}</td>
-            <td>{{kategory.kuvaus}}</td>
+            <td><a href="{{base_path}}/kategories/{{kategory.id}}">{{kategory.lisays}}</td>
+            
+            <td><a href="{{base_path}}/kategories/{{kategory.id}}">{{kategory.kuvaus}}</td>
             <td><a class="btn btn-default btn-sm" href="{{base_path}}/kategories/{{kategory.id}}/edit">Muokkaa</a></td>
         </tr>
         {% endfor %}

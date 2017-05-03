@@ -2,19 +2,18 @@
 
 class Kategory extends BaseModel {
 
-    public $id, $nimi, $kuvaus, $lisays;
+    public $id, $nimi, $kuvaus, $lisays, $kayttaja_id;
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        $this->validators = array('validate_nimi','validate_kuvaus', 'validate_lisays');
+        $this->validators = array('validate_nimi', 'validate_kuvaus', 'validate_lisays');
     }
-    
-    
+
     public function validate_nimi() {
         $errors = array();
 
         if ($this->nimi == '' || $this->nimi == null) {
-            $errors[] = 'Muistithan syöttää askareellesi nimen!';
+            $errors[] = 'Muistithan syöttää kategoriallesi nimen!';
         }
         if (strlen($this->nimi) < 3) {
             $errors[] = 'Nimen minimipituus on  kolme merkkiä!';
@@ -22,11 +21,11 @@ class Kategory extends BaseModel {
 
         return $errors;
     }
-    
+
     public function validate_kuvaus() {
         $errors = array();
         if ($this->kuvaus == '' || $this->kuvaus == null) {
-            $errors[] = 'Muistithan syöttää askareellesi kuvauksen!';
+            $errors[] = 'Muistithan syöttää kategoriallesi kuvauksen!';
         }
         if (strlen($this->kuvaus) < 3) {
             $errors[] = 'Kuvauksen minimipituus on kolme merkkiä!';
@@ -34,11 +33,11 @@ class Kategory extends BaseModel {
 
         return $errors;
     }
-    
+
     public function validate_lisays() {
         $errors = array();
         if ($this->lisays == '' || $this->lisays == null) {
-            $errors[] = 'Muistithan syöttää askareellesi lisäyspäivämäärän!';
+            $errors[] = 'Muistithan syöttää kategoriallesi lisäyspäivämäärän!';
         }
         if (!preg_match("/^[0-9]{1,2}\\.[0-9]{1,2}\\.[0-9]{4}$/", $this->lisays)) {
             $errors[] = 'Päivämäärän tulee olla muodossa dd.mm.yyyy!';
@@ -47,11 +46,11 @@ class Kategory extends BaseModel {
         return $errors;
     }
 
-    public static function all() {
-        $query = DB::connection()->prepare('SELECT * FROM Kategoria');
-        $query->execute();
+    public static function all($kayttaja_id) {
+        $query = DB::connection()->prepare('SELECT * FROM Kategoria WHERE kayttaja_id = :kayttaja_id');
+        $query->execute(array('kayttaja_id' => $kayttaja_id));
         $rows = $query->fetchAll();
-        $kategory = array();
+        $kategories = array();
 
         foreach ($rows as $row) {
             $kategories[] = new Kategory(array(
@@ -59,6 +58,7 @@ class Kategory extends BaseModel {
                 'nimi' => $row['nimi'],
                 'kuvaus' => $row['kuvaus'],
                 'lisays' => $row['lisays'],
+                'kayttaja_id' => $row['kayttaja_id']
             ));
         }
 
@@ -76,6 +76,7 @@ class Kategory extends BaseModel {
                 'nimi' => $row['nimi'],
                 'kuvaus' => $row['kuvaus'],
                 'lisays' => $row['lisays'],
+                'kayttaja_id' => $row['kayttaja_id']
             ));
 
             return $kategory;
@@ -84,19 +85,20 @@ class Kategory extends BaseModel {
         return null;
     }
 
+    
+
     public function save() {
 
-        $query = DB::connection()->prepare('INSERT INTO Kategoria (nimi, lisays, kuvaus) VALUES (:nimi, :lisays, :kuvaus) RETURNING id');
-        $query->execute(array('nimi' => $this->nimi, 'lisays' => $this->lisays, 'kuvaus' => $this->kuvaus));
+        $query = DB::connection()->prepare('INSERT INTO Kategoria (nimi, lisays, kuvaus, kayttaja_id) VALUES (:nimi, :lisays, :kuvaus, :kayttaja_id) RETURNING id');
+        $query->execute(array('nimi' => $this->nimi, 'lisays' => $this->lisays, 'kuvaus' => $this->kuvaus, 'kayttaja_id' => $this->kayttaja_id));
         $row = $query->fetch();
         $this->id = $row['id'];
     }
-    
-    
+
     public function update() {
 
-        $query = DB::connection()->prepare('UPDATE Kategoria SET nimi = :nimi, lisays = :lisays, deadline = :deadline, kuvaus = :kuvaus WHERE id = :id');
-        $query->execute(array('id' => $this->id,'nimi' => $this->nimi, 'lisays' => $this->lisays, 'deadline' => $this->deadline, 'kuvaus' => $this->kuvaus));
+        $query = DB::connection()->prepare('UPDATE Kategoria SET nimi = :nimi, lisays = :lisays, deadline = :deadline, kuvaus = :kuvaus, kayttaja_id = :kayttaja_id WHERE id = :id');
+        $query->execute(array('id' => $this->id, 'nimi' => $this->nimi, 'lisays' => $this->lisays, 'deadline' => $this->deadline, 'kuvaus' => $this->kuvaus, 'kayttaja_id' => $this->kayttaja_id));
         $row = $query->fetch();
         $this->id = $row['id'];
     }
