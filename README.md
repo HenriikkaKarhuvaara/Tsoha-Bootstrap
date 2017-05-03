@@ -3,7 +3,7 @@
 Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](http://karhuhen.users.cs.helsinki.fi/tsoha/login)
-* [Linkki dokumentaatiooni](https://github.com/HenriikkaKarhuvaara/Tsoha-Bootstrap/blob/master/doc/Muistilistadoku-5.pdf)
+* [Linkki dokumentaatiooni](https://github.com/HenriikkaKarhuvaara/Tsoha-Bootstrap/blob/master/doc/dokumentaatio.pdf)
 
 ## Työn aihe
 
