@@ -40,7 +40,7 @@
 <input type="hidden" name="kategoriat" value=0>
 
     <div class="form-group">
-        <label class="control-label" >Kategoriat</label>
+        <label>Kategoriat</label>
         <select class="form-control" name= "kategoriat[]" multiple="">
         {% for kategory in kategories %}
             <option value="{{kategory.id}}">{{kategory.nimi}}</option>
