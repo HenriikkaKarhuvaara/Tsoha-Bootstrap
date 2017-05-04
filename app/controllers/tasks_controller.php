@@ -5,7 +5,9 @@ class TaskController extends BaseController {
     public static function index() {
         self::check_logged_in();
 
+        //OK?
         $tasks = Task::allWithCategories(self::get_user_logged_in()->id);
+        //OK?
         View::make('task/index.html', array('tasks' => $tasks));
     }
 
@@ -28,12 +30,12 @@ class TaskController extends BaseController {
             'lisays' => $params['lisays'],
             'deadline' => $params['deadline'],
             'kayttaja_id' => $params['kayttaja_id'],
-            'kategoriat' => array()
+            'kategoriat[]' => array()
         );
         
         if($kategoriat!=0){
             
-        foreach ($kategories as $kategory) {
+        foreach ($kategoriat as $kategory) {
             
             $attributes['kategoriat'][]=$kategory;
         }}
@@ -54,7 +56,10 @@ class TaskController extends BaseController {
         //Näytetään askareen lisäyslomake
 
         self::check_logged_in();
+        
+        //OK?
         $kategories = Kategory::all(self::get_user_logged_in()->id);
+        //OK?
         View::make('task/new.html',array('kategories' => $kategories));
     }
 

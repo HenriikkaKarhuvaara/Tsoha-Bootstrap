@@ -38,7 +38,7 @@ $routes->get('/task/:id/destroy', function($id) {
     TaskController::edit($id);
 });
 
-
+//askareiden listaussivu
 $routes->get('/task', function() {
    TaskController::index();
 });

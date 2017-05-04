@@ -37,24 +37,25 @@
       <textarea name="kuvaus" class="form-control">{{attributes.kuvaus}}</textarea>
     </div>
       
-       <input type="hidden" name="kategoriat" value=0>
-
+<input type="hidden" name="kategoriat" value=0>
 
     <div class="form-group">
-        <label>Kategoriat</label>
-        <select class="form-control" name= "kategoriat" multiple="">
+        <label class="control-label" >Kategoriat</label>
+        <select class="form-control" name= "kategoriat[]" multiple="">
         {% for kategory in kategories %}
             <option value="{{kategory.id}}">{{kategory.nimi}}</option>
-            {% endfor %}
+        {% endfor %}
         </select>
     </div>
       
       <div class="form-group">
-      <input type="hidden" name="kayttaja_id" value={{user_logged_in.id}}>
+      <input type="hidden" name="kayttaja_id" value="{{user_logged_in.id}}">
     </div>
 
     <div class="form-group">
       <button type="submit" class="btn btn-primary">Lisää</button>
     </div>
+       
+       
   </form>
 {% endblock %}
