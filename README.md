@@ -11,6 +11,6 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 
 ### Testikäyttäjätunnus ja -salasana: testi, testi.
 
-#### Huom! Vielä ei toimi
+#### Huom! En saanut toimimaan:
 
-* askareen kategorioiden löytyminen / kategorian askareiden löytyminen
+* askareen kategorioiden listaus
