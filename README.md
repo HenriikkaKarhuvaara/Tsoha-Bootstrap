@@ -1,5 +1,10 @@
 # Tietokantasovelluksen esittelysivu
 
+#### Huom!
+
+* Askareen ja kategorian välillä on monesta-moneen -yhteys, mutta jostain syystä en saanut askareen kategorioita näkymään listauksessa.
+
+
 Yleisiä linkkejä:
 
 * [Linkki sovellukseeni](http://karhuhen.users.cs.helsinki.fi/tsoha/login)
@@ -11,6 +16,4 @@ Laita tähän aihekuvaus tai [linkki valmiiseen aiheeseen](http://advancedkitten
 
 ### Testikäyttäjätunnus ja -salasana: testi, testi.
 
-#### Huom! En saanut toimimaan:
 
-* askareen kategorioiden listaus
